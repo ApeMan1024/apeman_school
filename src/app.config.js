@@ -1,11 +1,19 @@
 export default {
   pages: [
-    'pages/index/index'
+    'pages/index/index',
+    'pages/wo/wo',
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
-  }
+    navigationBarBackgroundColor: '#3A3A3E',
+    navigationBarTextStyle: 'white',
+  },
+  tabBar: {
+    list: [
+      { text: '首页', iconPath: 'images/index1.png', selectedIconPath: 'images/index2.png', pagePath: 'pages/index/index' },
+      { text: '我的', iconPath: 'images/wo1.png', selectedIconPath: 'images/wo2.png', pagePath: 'pages/wo/wo' }
+    ]
+  },
+  "usingComponents": {}
 }

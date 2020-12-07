@@ -1,0 +1,19 @@
+.title{
+    width:100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    padding-left:20px;
+    &::after{
+        content: "";
+        background:url("../../images/btbg1.png") no-repeat;
+        background-size:100% 100%;
+        width:80px;
+        height:8px;
+        display:block;
+        position: absolute;
+        bottom: 2px;
+        z-index: -1;
+    }
+}

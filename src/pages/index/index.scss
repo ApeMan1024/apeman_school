@@ -1,0 +1,48 @@
+.bar {
+    height: 120px;
+    background: rgb(247, 247, 247);
+    .at-search-bar__input-cnt {
+        background: rgb(232, 232, 232);
+    }
+}
+.swi {
+    width: 100%;
+    .switem {
+        width: 100%;
+        .im {
+            width: 100%;
+            height: 300px;
+        }
+    }
+}
+.heji {
+    display: flex;
+    justify-content: space-around;
+    margin-top:50px;
+    .he {
+        width: 150px;
+        height: 112px;
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #999;
+        position: relative;
+        .sy {
+            width: 36px;
+            height: 27px;
+            position: absolute;
+            bottom: 1px;
+            right: 1px;
+        }
+        .ti1 {
+            font-size: 28px;
+            margin-left:20px;
+            margin-top:10px;
+        }
+        .ti2 {
+            font-size: 24px;
+            margin-left:20px;
+            color: #ff3d3d;
+        }
+    }
+}
+
