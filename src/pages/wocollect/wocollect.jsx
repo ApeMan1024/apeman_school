@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View } from '@tarojs/components'
+import { View, ScrollView } from '@tarojs/components'
 import { AtTabs, AtTabsPane, AtSearchBar } from 'taro-ui'
 import Ke from "../ke/index";
 import './wocollect.scss'
@@ -45,24 +45,26 @@ export default class Wocollect extends Component {
   render() {
     const { tabList, searchVal, shouList, hejiList } = this.state;
     return (
-      <View className='wocollect'>
-        <AtTabs current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
-          <AtTabsPane current={this.state.current} index={0} >
-            <AtSearchBar placeholder='推荐课程名称' className='bar' value={searchVal} onChange={this.onSearchChangeHandle} />
-            {
-              shouList.map(item => <Ke item={item} shou={item.shou} key={item.id} />)
-            }
-          </AtTabsPane>
-          <AtTabsPane current={this.state.current} index={1}>
-            <AtSearchBar placeholder='推荐课程名称' className='bar' value={searchVal} onChange={this.onSearchChangeHandle} />
-            <View className='hj' >
+      <ScrollView className='sco' scrollY>
+        <View className='wocollect'>
+          <AtTabs current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
+            <AtTabsPane current={this.state.current} index={0} >
+              <AtSearchBar placeholder='推荐课程名称' className='bar' value={searchVal} onChange={this.onSearchChangeHandle} />
               {
-                hejiList.map(item => <Heji key={item.id} item={item} />)
+                shouList.map(item => <Ke item={item} shou={item.shou} key={item.id} />)
               }
-            </View>
-          </AtTabsPane>
-        </AtTabs>
-      </View>
+            </AtTabsPane>
+            <AtTabsPane current={this.state.current} index={1}>
+              <AtSearchBar placeholder='推荐课程名称' className='bar' value={searchVal} onChange={this.onSearchChangeHandle} />
+              <View className='hj' >
+                {
+                  hejiList.map(item => <Heji key={item.id} item={item} />)
+                }
+              </View>
+            </AtTabsPane>
+          </AtTabs>
+        </View>
+      </ScrollView>
     )
   }
 }

@@ -1,3 +1,11 @@
+.sco {
+    height: 100%;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
 .wocollect {
     padding-bottom: 20px;
     .at-tabs-pane {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Image, Swiper, SwiperItem } from '@tarojs/components';
+import { View, Image, Swiper, SwiperItem, ScrollView } from '@tarojs/components';
 import { AtSearchBar } from 'taro-ui';
+import Taro from "@tarojs/taro";
 import Ke from "../ke/index";
 import './index.scss';
 import lun1 from "../../images/lun1.jpg";
@@ -47,37 +48,44 @@ export default class Index extends Component {
       ]
     }
     this.onSearchInputHandle = this.onSearchInputHandle.bind(this);
+    this.onRouterHeClickHandle = this.onRouterHeClickHandle.bind(this);
   }
   onSearchInputHandle(value) {
     this.setState({ searchValue: value });
   }
+  //点击课程合集实现跳转
+  onRouterHeClickHandle({ id }) {
+    Taro.navigateTo({ url: `/pages/subset/subset?id=${id}` });
+  }
   render() {
     let { searchValue, imList, heList, keList } = this.state;
     return (
-      <View>
-        <AtSearchBar placeholder='推荐课程名称' className='bar' value={searchValue} onChange={this.onSearchInputHandle} />
-        <Swiper className='swi' indicatorDots autoplay circular interval='3000'>
+      <ScrollView className='sco' scrollY>
+        <View>
+          <AtSearchBar placeholder='推荐课程名称' className='bar' value={searchValue} onChange={this.onSearchInputHandle} />
+          <Swiper className='swi' indicatorDots autoplay circular interval='3000'>
+            {
+              imList.map(item => <SwiperItem className='switem' key={item.id}>
+                <Image src={item.imgSrc} className='im'></Image>
+              </SwiperItem>)
+            }
+          </Swiper>
+          <View className='heji'>
+            {
+              heList.map(item => <View className='he' key={item.id} onClick={() => this.onRouterHeClickHandle(item)}>
+                <View className='ti1'>合集</View>
+                <View className='ti2'>{item.ti2}</View>
+                <View>
+                  <Image src={item.src} className='sy'></Image>
+                </View>
+              </View>)
+            }
+          </View>
           {
-            imList.map(item => <SwiperItem className='switem' key={item.id}>
-              <Image src={item.imgSrc} className='im'></Image>
-            </SwiperItem>)
-          }
-        </Swiper>
-        <View className='heji'>
-          {
-            heList.map(item => <View className='he' key={item.id}>
-              <View className='ti1'>合集</View>
-              <View className='ti2'>{item.ti2}</View>
-              <View>
-                <Image src={item.src} className='sy'></Image>
-              </View>
-            </View>)
+            keList.map(item => <Ke item={item} key={item.id} />)
           }
         </View>
-        {
-          keList.map(item => <Ke item={item} key={item.id} />)
-        }
-      </View>
+      </ScrollView>
     );
   }
 

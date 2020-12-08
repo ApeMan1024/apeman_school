@@ -2,7 +2,8 @@ export default {
   pages: [
     'pages/index/index',
     'pages/wo/wo',
-    'pages/wocollect/wocollect'
+    'pages/wocollect/wocollect',
+    'pages/subset/subset'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -17,5 +18,5 @@ export default {
     ]
   },
   "usingComponents": {},
-  entryPagePath:"pages/wocollect/wocollect"
+  entryPagePath:"pages/subset/subset"
 }
