@@ -1,0 +1,44 @@
+.heji {
+    display: flex;
+    position: relative;
+    .imgv {
+        width: 164px;
+        height: 217px;
+        .im1 {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .miao{
+        margin-left:20px;
+        .jianjie{
+            width:540px;
+            color:#666666;
+            font-size: 24px;
+            margin:20px 0;
+        }
+        .num{
+            color:#666666;
+            font-size: 24px;
+        }
+    }
+    .shou{
+        width:120px;
+        height:50px;
+        background:#E8E8E8;
+        color:#999999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0px;
+        right:0px;
+        border-radius: 5px;
+    }
+}
+.kecheng{
+    width:100%;
+    height:1PX;
+    background:#999;
+    margin:40px 0;
+}

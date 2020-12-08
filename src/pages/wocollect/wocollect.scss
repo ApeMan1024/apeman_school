@@ -1,0 +1,43 @@
+.wocollect {
+    padding-bottom: 20px;
+    .at-tabs-pane {
+        .ke {
+            &:nth-child(2){
+                .biao{
+                    margin-top:0px;
+                }
+            }
+        }
+    }
+
+    .at-tabs__item {
+        .at-tabs__item-underline {
+            width: 20%;
+            margin: auto;
+            left: 40%;
+            background: #f3d258;
+            height: 2px;
+        }
+    }
+
+    .bar {
+        height: 120px;
+        background: rgb(247, 247, 247);
+        .at-search-bar__input-cnt {
+            background: rgb(232, 232, 232);
+        }
+        &::after {
+            border: none;
+        }
+    }
+    .hj{
+        padding:0 20px;
+        .ha{
+            &:last-child{
+                .kecheng{
+                    background:none;
+                }
+            }
+        }
+    }
+}

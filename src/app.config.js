@@ -2,6 +2,7 @@ export default {
   pages: [
     'pages/index/index',
     'pages/wo/wo',
+    'pages/wocollect/wocollect'
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -15,5 +16,6 @@ export default {
       { text: '我的', iconPath: 'images/wo1.png', selectedIconPath: 'images/wo2.png', pagePath: 'pages/wo/wo' }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  entryPagePath:"pages/wocollect/wocollect"
 }

@@ -4,11 +4,14 @@ import Title from "../title/index";
 import "./index.scss";
 
 function Ke(props) {
-    const { item } = props;
+    const { item, shou=undefined} = props;
     return (
-        <View>
+        <View className='ke'>
             <View className='biao'>
                 <Title title={item.title} />
+                {
+                    shou&&<View className='shou'>已收藏</View>
+                }
             </View>
             <View className='ke1'>
                 {

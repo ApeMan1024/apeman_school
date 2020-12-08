@@ -51,14 +51,6 @@ export default class Index extends Component {
   onSearchInputHandle(value) {
     this.setState({ searchValue: value });
   }
-  componentDidShow(){
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 0
-      })
-    }
-  }
   render() {
     let { searchValue, imList, heList, keList } = this.state;
     return (
@@ -88,5 +80,5 @@ export default class Index extends Component {
       </View>
     );
   }
-  
+
 }

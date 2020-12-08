@@ -1,5 +1,19 @@
 .biao{
     margin-top:30px;
+    position: relative;
+    .shou{
+        position: absolute;
+        right: 0px;
+        top:0px;
+        width:120px;
+        height:50px;
+        background: #E8E8E8;
+        color:#999;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-right:30px;
+    }
 }
 .ke1{
     display: flex;
